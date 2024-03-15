@@ -6,19 +6,25 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA({
-      manifest: {
-        icons: [
-          {
-            src: "/public/basilicon.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
-        ],
-        theme_color: "#3c5318",
-      },
-    }),
+    VitePWA(
+      {
+        registerType: "autoUpdate",
+        devOptions: {
+          enabled: true,
+        },
+         manifest: {
+          icons: [
+            {
+              src: "/basilIcon.png",
+              sizes: "512x512",
+              type: "image/png",
+              purpose: "any maskable",
+            },
+          ],
+          theme_color: "#3c5318",
+        },
+      }
+    ),
   ],
   server: {
     port: 3000,
