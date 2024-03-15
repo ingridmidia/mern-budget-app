@@ -17,9 +17,11 @@ function makePie() {
   const userExpenses = data.me.expenses;
   const categoryUserExpenses = data.me.expenses.categories;
   userExpenses.map(expense => expense.category)
+  console.log(userExpenses)
   
   const aggregateExpenses = userExpenses.reduce((result,expense)=> {
     const{category, amount} = expense
+    console.log(category, amount)
     const existingCategory = result.find((item)=> item.category === category)
     if (existingCategory){
       existingCategory.amount += amount
@@ -34,7 +36,7 @@ function makePie() {
   const userData = {
     labels: aggregateExpenses.map(expense => expense.category),
     datasets: [{
-      label: "Spending by Category",
+      label: "Spending Category",
       data: aggregateExpenses.map(expense => expense.amount),
       backgroundColor: ['#902b68', '#32620E', '#68902b', '#9dcd5a', '#f3e9d2', 'rgb(144,43,104, .7)', 'rgb(144,43,104, .3)', 'black']
     }]

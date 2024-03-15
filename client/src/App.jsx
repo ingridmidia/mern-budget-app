@@ -9,6 +9,8 @@ import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { CssBaseline } from '@mui/material';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -36,17 +38,19 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <div className="min-vh-100" >
-        <Header />
-        <Nav id="nav-bar"/>
-        <div className='row' style={{justifyContent: 'center'}}>
-          
-          <Outlet />
+    <>
+      {/* <CssBaseline /> */}
+      <ApolloProvider client={client}>
+        <div className="min-vh-100" >
+          <Header />
+          <Nav id="nav-bar" />
+          <div className='row' style={{ justifyContent: 'center', minHeight: '100vh' }}>
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </ ApolloProvider>
+      </ ApolloProvider>
+    </>
   );
 }
 
