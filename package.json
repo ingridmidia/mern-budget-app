@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "vite-plugin-pwa": "^0.19.4",
+    "workbox-window": "^7.0.0"
   },
   "engines": {
     "node": "18.x",
@@ -22,10 +24,7 @@
   },
   "dependencies": {
     "chart.js": "^4.4.0",
-    "react-chartjs-2": "^5.2.0",
-    
-    "react-animated-css": "^1.2.1"
+    "react-animated-css": "^1.2.1",
+    "react-chartjs-2": "^5.2.0"
   }
 }
-
-
