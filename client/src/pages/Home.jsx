@@ -8,95 +8,145 @@ const Home = () => {
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid item xs={12} m={6}>
+        <Grid item xs={12} sm={6}> {/* Adjusting the size for medium screens */}
           <Box
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column-reverse', sm: 'row' }, // Adjust for different screen sizes
-              alignItems: { xs: 'center', sm: 'space-Around' }, // Center items for xs, align to the start for sm
+              flexDirection: { xs: 'column', sm: 'row' }, // Adjust for different screen sizes
+              flexWrap: 'wrap', // Allow items to wrap to the next line
+              alignItems: 'center', // Align items at the midline
               marginBottom: 2,
             }}
           >
             {/* Image */}
-            <img
-              src={LapTop}
-              alt="laptop open to Basil"
-              style={{
-                width: '100%',
-                maxWidth: 400,
-                height: 'auto',
-                objectFit: 'cover',
-              }}
-
-            />
-
+            <Box sx={{ flex: '1 1 calc(25% - 20px)', padding: '0 10px', marginBottom: '20px' }}> {/* 20px padding on each side */}
+              <img
+                src={LapTop}
+                alt="laptop open to Basil"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                }}
+              />
+            </Box>
             {/* Text Box */}
-            <Box alignContent={'end'}
+            <Box
               sx={{
+                flex: '1 1 calc(50% - 20px)', // 20px padding on each side
+                padding: '0 10px', // Adjust padding as needed
                 textAlign: { xs: 'center', sm: 'end' },
                 marginTop: { xs: 2, sm: 0 },
+                marginBottom: { xs: 2, sm: 0 }, // Add margin bottom to space out from the next item
               }}
             >
               <Paper elevation={3} style={{ maxHeight: '100vh', overflow: 'auto', padding: 3 }}>
-                <Typography variant='h4' style={{ fontFamily: 'Lobster Two, sans-serif' }}>👋 Hey there! We are Basil.</Typography>
-                <Typography variant='body' style={{ fontFamily: 'Andika, sans-serif' }}> We love helping people take charge of their financial future!
+                <Typography variant='h4' style={{ fontFamily: 'Lobster Two, sans-serif', fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>👋 Hey there! We are Basil.</Typography>
+                <Typography variant='body' style={{ fontFamily: 'Andika, sans-serif', fontSize: 'clamp(1rem, 3vw, 1.5rem)' }}> We love helping people take charge of their financial future!
                   <br />
-                  Interested?  Learn more aboout us <a href='/about'><Button variant='contained' color='success' >HERE</Button> </a></Typography>
+                  Interested? Learn more about us <a href='/about'><Button variant='contained' color='success' >HERE</Button> </a>
+                </Typography>
               </Paper>
             </Box>
-            {/* Image */}
-            <img
-              src={PlantGif}
-              alt="Illustrated Gif of plants"
-              style={{
-                width: '100%',
-                maxWidth: 400,
-                height: 'auto',
-                objectFit: 'cover',
-              }}
-
-            />
+            {/* GIF */}
+            <Box sx={{ flex: '1 1 calc(25% - 20px)', padding: '0 10px' }}> {/* 20px padding on each side */}
+              <img
+                src={PlantGif}
+                alt="Illustrated Gif of plants"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                }}
+              />
+            </Box>
           </Box>
         </Grid>
       </Grid>
 
-      <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      pb: 3
-      }} 
-   >
-      <Typography variant='h3' style={{ fontFamily: 'lobster Two, sans-serif', }}>
-        Check out what Basil users are saying!
-      </Typography>
-    </Box >
+      <Box
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 3,
+    paddingLeft: 3,
+    paddingRight: 3,
+  }}
+>
+  <Box sx={{ maxWidth: '100%', wordWrap: 'break-word' }}>
+    <Typography
+      variant='h3'
+      style={{
+        fontFamily: 'Lobster Two, sans-serif',
+        fontSize: 'clamp(1.5rem, calc(8vw + 5px), 3rem)', // Adjusted font size for smaller screens
+        '@media (max-width: 699px)': {
+          fontSize: 'clamp(1.5rem, calc(5vw + 5px), 2rem)', // Font size for screens below 699px
+        },
+      }}
+    >
+      Check out what Basil users are saying!
+    </Typography>
+  </Box>
+</Box>
 
-      <Grid container spacing={{ xs: 2, md: 3, xl: 4 }} columns={{ xs: 2, md: 6, xl: 12 }} justifyContent={'center'}>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: 'wrap',
-            justifyContent: 'end', // Center the items horizontally
-            textAlign: 'center',
-            '& > :not(style)': {
+<Grid container spacing={{ xs: 2, md: 3, xl: 4 }} justifyContent={'center'}>
+  {/* First sub-container */}
+  <Grid item xs={12} md={6} xl={3}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: 'wrap',
+        justifyContent: 'center', // Align items to center horizontally
+        textAlign: 'center',
+        '& > :not(style)': {
+          m: 2, // Adjust margin as needed
+          p: 2,
+          width: '100%', // Set width to 100% to take up full width of the column
+          maxWidth: 300, // Set max-width to control the maximum width of the box
+        },
+      }}
+    >
+      <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>
+        "Absolutely love this budgeting app! It's user-friendly, visually appealing, and has transformed my financial habits. The intuitive features make budgeting a breeze, providing insightful analytics. A must-have for anyone seeking financial control!" - Sophia R.
+      </Paper>
+      <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>
+        "Impressive! This app simplifies budgeting like never before. Alex-friendly interface, powerful tools, and insightful reports. My financial game has never been stronger!" - Alex T.
+      </Paper>
+    </Box>
+  </Grid>
+  {/* Second sub-container */}
+  <Grid item xs={12} md={6} xl={3}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: 'wrap',
+        justifyContent: 'center', // Align items to center horizontally
+        textAlign: 'center',
+        '& > :not(style)': {
+          m: 2, // Adjust margin as needed
+          p: 2,
+          width: '100%', // Set width to 100% to take up full width of the column
+          maxWidth: 300, // Set max-width to control the maximum width of the box
+        },
+      }}
+    >
+      <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>
+        "Five stars for this brilliant budgeting app! Its simplicity and effectiveness make using it FUN! From tracking expenses to setting goals, it's the financial companion everyone needs. A total game-changer!" -Olivia H.
+      </Paper>
+      <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>
+        "Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.
+      </Paper>
+    </Box>
+  </Grid>
+</Grid>
 
-              m: 4,
-              p: 2,
-              width: 260,
-              height: 255,
 
-            },
-          }}
-        >
-          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Absolutely love this budgeting app! It's user-friendly, visually appealing, and has transformed my financial habits. The intuitive features make budgeting a breeze, providing insightful analytics. A must-have for anyone seeking financial control!" - Sophia R.</Paper>
-          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Impressive! This app simplifies budgeting like never before. Alex-friendly interface, powerful tools, and insightful reports. My financial game has never been stronger!" - Alex T.</Paper>
-          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Five stars for this brilliant budgeting app! Its simplicity and effectiveness makes using it FUN! From tracking expenses to setting goals, it's the financial companion everyone needs. A total game-changer!" -Olivia H.</Paper>
-          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.</Paper>
-        </Box>
-      </Grid>
-   </>
+
+
+
+    </>
   );
 };
 
