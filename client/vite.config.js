@@ -14,6 +14,7 @@ export default defineConfig({
         },
          manifest: {
           name: "Basil",
+          description: "A budget tracker that allows you to take charge of your financial future!",
           icons: [
             {
               src: "/basilIcon.png",
