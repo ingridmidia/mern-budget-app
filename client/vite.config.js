@@ -13,6 +13,7 @@ export default defineConfig({
           enabled: true,
         },
          manifest: {
+          name: "Basil",
           icons: [
             {
               src: "/basilIcon.png",
