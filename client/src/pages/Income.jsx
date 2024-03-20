@@ -16,8 +16,6 @@ const Income = () => {
     // Convert string to number
     formEntries.amount = +formEntries.amount;
 
-    console.log(formEntries);
-
     try {
       const { data } = await addIncome({ variables: { ...formEntries } });
     } catch (error) {

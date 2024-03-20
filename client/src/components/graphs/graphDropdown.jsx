@@ -10,8 +10,7 @@ import { useScrollTrigger } from '@mui/material'
 const GraphDropdown = () => {
     const [graphType, setGraphType] = useState("doughnut");
     const handleOnchange = (e) => {
-        console.log(e.target.value);
-        setGraphType(e.target.value)
+        setGraphType(e.target.value);
     }
     return (
         <>
