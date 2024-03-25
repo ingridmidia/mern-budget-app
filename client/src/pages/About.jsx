@@ -9,6 +9,7 @@ const About = () => {
 
         <Grid
             container
+            justifyContent="center"
             alignContent="center"
             sx={{
                 textAlign: { xs: 'center', sm: 'start' },
@@ -26,7 +27,7 @@ const About = () => {
                     objectFit: 'cover',
                 }}
             />
-            <Paper elevation={3} style={{ maxWidth: '45vw', maxHeight: '100vh', overflow: 'auto', padding: 3}}>
+            <Paper elevation={3} style={{ maxWidth: '75vw', maxHeight: '100vh', overflow: 'auto', padding: 3}}>
                 <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
                     Our revolutionary new budgeting web app was born of the minds of  three brilliant web development students with a deep need to keep track of their spending during a time of rising inflation and limited income. (#studentlife)
                     <br />
@@ -47,16 +48,6 @@ const About = () => {
 
                 </Typography>
             </Paper>
-            <img
-                src={PlantGif}
-                alt="Illustrated Gif of plants"
-                style={{
-                    width: '100%',
-                    maxWidth: 375,
-                    height: 'auto',
-                    objectFit: 'cover',
-                }}
-            />
         </Grid>
 </>
     )
