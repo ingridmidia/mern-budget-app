@@ -16,13 +16,8 @@ body {
   .lobster{
     font-family: 'Lobster, Andika, sans-serif';
   }
-<<<<<<< HEAD
 #root {
     background-color: #fbfff4;
-=======
-  #root {
-    background-color: #f3d9d0;
->>>>>>> fcb4cd182ca795a03c0c78f7553d0dc2a32a580d
     font-family: 'Andika';
     min-height: 100vh;
     padding-left: 10px; /* Adjust padding as needed */
