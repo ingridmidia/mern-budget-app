@@ -1,51 +1,39 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
-import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
-import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
-import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
-import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
-import WavingHandIcon from '@mui/icons-material/WavingHand';
-import { Tooltip } from '@mui/material';
-import { green } from '@mui/material/colors';
-
-const color = green[800];
-
-
-
+import * as React from "react";
+import { Link } from "react-router-dom";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
+import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
+import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
+import AutoGraphRoundedIcon from "@mui/icons-material/AutoGraphRounded";
+import WavingHandIcon from "@mui/icons-material/WavingHand";
+import { Tooltip } from "@mui/material";
 import Auth from "../../utils/auth";
 
-export default function Nav({ isAuthenticated }) {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+export default function Nav() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
   };
 
-   const logout = (event) => {
-     event.preventDefault();
-     Auth.logout();
-   };
+  const backgroundColor = "#BBEDC4";
+  const titleColor = "#365242";
 
   return (
-    <Tabs
-      value={value}
-      onChange={handleChange}
-
-      orientation="horizontal"
-      aria-label="icon tabs"
-      indicatorColor= {{color: green[900]}}
+    <div
+      style={{
+        backgroundColor,
+        display: "flex",
+        justifyContent: "end",
+        alignItems: "center",
+        paddingBottom: "0.5rem",
+        paddingRight:"0.5rem"
+      }}
     >
       <Link to="/">
         <Tooltip title="Home" placement="bottom" arrow>
-          <Tab
-            icon={
-              <EnergySavingsLeafIcon sx={{ color: green[900], fontSize: 30 }} />
-            }
-            aria-label="Home"
+          <EnergySavingsLeafIcon
+            sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
           />
         </Tooltip>
       </Link>
@@ -55,50 +43,31 @@ export default function Nav({ isAuthenticated }) {
           <Link to="/overview">
             <Tooltip title="Dashboard" placement="bottom" arrow>
               {" "}
-              <Tab
-                icon={
-                  <HomeRoundedIcon sx={{ color: green[900], fontSize: 30 }} />
-                }
-                aria-label="Overview"
+              <HomeRoundedIcon
+                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
               />
             </Tooltip>
           </Link>
 
           <Link to="/transaction">
             <Tooltip title="Transaction List" placement="bottom" arrow>
-              <Tab
-                icon={
-                  <AssignmentRoundedIcon
-                    sx={{ color: green[900], fontSize: 30 }}
-                  />
-                }
-                aria-label="Transactions List"
+              <AssignmentRoundedIcon
+                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
               />
             </Tooltip>
           </Link>
 
           <Link to="/graphpage">
             <Tooltip title="Spending Graphs" placement="bottom" arrow>
-              <Tab
-                icon={
-                  <AutoGraphRoundedIcon
-                    sx={{ color: green[900], fontSize: 30 }}
-                  />
-                }
-                aria-label="Transactions Graphs"
+              <AutoGraphRoundedIcon
+                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
               />
             </Tooltip>
           </Link>
 
-          <Link to="/home">
+          <Link to="/home" onClick={logout}>
             <Tooltip title="Log Out" placement="bottom" arrow>
-              <Tab
-                icon={
-                  <LoginRoundedIcon sx={{ color: green[900], fontSize: 30 }} />
-                }
-                aria-label="Home"
-                onClick={logout}
-              />
+              <LoginRoundedIcon sx={{ color: titleColor, fontSize: 30 }} />
             </Tooltip>
           </Link>
         </>
@@ -107,40 +76,29 @@ export default function Nav({ isAuthenticated }) {
           <Link to="/login">
             <Tooltip title="Log In" placement="bottom" arrow>
               {" "}
-              <Tab
-                icon={
-                  <LoginRoundedIcon sx={{ color: green[900], fontSize: 30 }} />
-                }
-                aria-label="Log In"
-              />
-            </Tooltip>
-          </Link>
-         
-          <Link to="/signup">
-            <Tooltip title="Sign Up" placement="bottom" arrow>
-              {" "}
-              <Tab
-                icon={
-                  <AddBoxRoundedIcon sx={{ color: green[900], fontSize: 30 }} />
-                }
-                aria-label="Sign Up"
+              <LoginRoundedIcon
+                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
               />
             </Tooltip>
           </Link>
 
-          <Link to='/about'>
-            <Tooltip title="About Us" placement='bottom' arrow>
+          <Link to="/signup">
+            <Tooltip title="Sign Up" placement="bottom" arrow>
               {" "}
-              <Tab
-                icon={
-                  <WavingHandIcon sx={{ color: green[900], fontSize: 30 }} />
-                }
-                aria-label='About Us'
-                />
+              <AddBoxRoundedIcon
+                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
+              />
+            </Tooltip>
+          </Link>
+
+          <Link to="/about">
+            <Tooltip title="About Us" placement="bottom" arrow>
+              {" "}
+              <WavingHandIcon sx={{ color: titleColor, fontSize: 30 }} />
             </Tooltip>
           </Link>
         </>
       )}
-    </Tabs>
+    </div>
   );
 }

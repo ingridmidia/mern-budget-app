@@ -13,14 +13,14 @@ const Header = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "start",
         width: "100%",
       }}
     >
       <Animated animationIn="fadeInRightBig">
         <Typography
           variant="h1"
-          style={{ color: titleColor, fontFamily: "Comfortaa, sans-serif", fontWeight: 700 }}
+          style={{ color: titleColor, fontFamily: "Comfortaa, sans-serif", fontWeight: 600 }}
           className="basil-title"
         >
           basil
