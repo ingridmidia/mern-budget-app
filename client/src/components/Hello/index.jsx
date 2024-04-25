@@ -30,7 +30,7 @@ const Hello = ({ userInfo }) => {
     <>
 
       <Box sx={{ flexGrow: 2, textAlign: 'center' }}>
-        <Grid container spacing={8}>
+        <Grid container spacing={4}>
           <Grid item xs={12}>
             <Item>Hello, {userInfo.firstName}!</Item>
           </Grid>

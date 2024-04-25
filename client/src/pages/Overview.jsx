@@ -3,31 +3,30 @@ import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Button from "@mui/material/Button";
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import Hello from "../components/Hello";
 import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
 import { Grid, Paper, Box } from "@mui/material";
-
 
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
     return (
-<>
- <Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
-      <a href="/Login" style={{ textDecoration: 'none' }}>
-        <Button variant="contained" color="success">
-          Log In
-        </Button>
-      </a>
-      <a href="/Signup" style={{ textDecoration: 'none' }}>
-        <Button variant="contained" color="success">
-          Sign Up
-        </Button>
-      </a>
-    </Grid>
-</>
+      <>
+        <Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
+          <a href="/Login" style={{ textDecoration: "none" }}>
+            <Button variant="contained" color="success">
+              Log In
+            </Button>
+          </a>
+          <a href="/Signup" style={{ textDecoration: "none" }}>
+            <Button variant="contained" color="success">
+              Sign Up
+            </Button>
+          </a>
+        </Grid>
+      </>
     );
   }
 
@@ -47,7 +46,6 @@ const Overview = () => {
 
   // Handle loading state
   if (loading) {
-    // You can use loading skeletons or placeholders here
     return <div>Loading...</div>;
   }
 
@@ -59,14 +57,14 @@ const Overview = () => {
   const userInfo = data.me;
 
   const containerStyle = {
-    border: "1px solid #ddd", // Add a border with a light gray color
-    borderRadius: "8px", // Add rounded corners
-    marginBottom: "20px", // Add some spacing between containers
-    padding: "20px", // Add internal padding
+    border: "1px solid #ddd",
+    borderRadius: "8px",
+    marginBottom: "20px",
+    padding: "20px",
     marginTop: "20px",
     background: "white",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   };
 
   const buttoncontainer = {
@@ -76,20 +74,32 @@ const Overview = () => {
     marginBottom: "20px",
     gap: "50px",
   };
-  
 
   return (
     <>
-   
-    <div className="text-center" id="hello" style={{containerStyle, fontFamily: 'andika, sans-serif'}}>
-        <Hello userInfo={userInfo}  />
+      <div
+        className="text-center"
+        id="hello"
+        style={{
+          containerStyle,
+          fontFamily: "andika, sans-serif",
+          padding: "2rem",
+          width: "50%",
+          margin: "auto",
+          backgroundColor:"#BBEDC4",
+          marginTop: "2rem",
+          borderRadius: "1rem"
+          
+        }}
+      >
+        <Hello userInfo={userInfo} />
       </div>
 
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
-          color="success" 
-          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
+          color="success"
+          style={{ marginTop: "16px", fontFamily: "andika, sans-serif" }}
           startIcon={<KeyboardDoubleArrowUpIcon />}
           onClick={(event) => addIncome(event)}
         >
@@ -97,29 +107,24 @@ const Overview = () => {
         </Button>
         <Button
           variant="outlined"
-          color="success" 
-          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
+          color="success"
+          style={{ marginTop: "16px", fontFamily: "andika, sans-serif" }}
           startIcon={<KeyboardDoubleArrowDownIcon />}
           onClick={(event) => addExpense(event)}
         >
           Add Expense
         </Button>
       </div>
-      <Grid
-      container
-      justifyContent="center"
-      style={{ maxHeight: '50vh' }} 
-    >
-      <Paper elevation={24} style={{ width: '50%', padding: '16px' }}>
-        <MakeExtraBar style={{ width:'100%', fontFamily:'andika, sans-serif' }} justifyContent='center' />
-      </Paper>
-    </Grid>
-
-      
-
+      <Grid container justifyContent="center" style={{ maxHeight: "50vh" }}>
+        <Paper elevation={24} style={{ width: "50%", padding: "16px" }}>
+          <MakeExtraBar
+            style={{ width: "100%", fontFamily: "andika, sans-serif" }}
+            justifyContent="center"
+          />
+        </Paper>
+      </Grid>
     </>
-  );  
-  
+  );
 };
 
 export default Overview;
