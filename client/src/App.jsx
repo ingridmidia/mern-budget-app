@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
-        <div className="min-vh-100" >
+        <div>
           <Header />
             <Outlet />
           {/* <Footer /> */}
