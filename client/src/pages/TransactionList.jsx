@@ -84,7 +84,6 @@ const Transaction = () => {
       >
         {/* First table - Income */}
         <Grid item xs={12} md={8} xl={6}>
-          {/* <Paper elevation={3} style={{ padding: "16px", overflowX: "auto" }}> */}
           <div
             style={{
               display: "flex",
@@ -100,41 +99,29 @@ const Transaction = () => {
             />
             {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
           </div>
-          {/* </Paper> */}
         </Grid>
 
         {/* Second table - Expenses */}
         <Grid item xs={12} md={8} xl={6}>
-          <Paper elevation={3} style={{ padding: "16px", overflowX: "auto" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <AddCircleIcon
-                onClick={addExpense}
-                color="success"
-                sx={{ fontSize: 30 }}
-              />
-              <Typography variant="h4" align="center">
-                Expenses
-              </Typography>
-              <ExpenseTable
-                data={userInfo.expenses}
-                onUpdate={updateExpense}
-                onDelete={removeExpense}
-              />
-              {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
-            </div>
-          </Paper>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <ExpenseTable
+              data={userInfo.expenses}
+              onUpdate={updateExpense}
+              onDelete={removeExpense}
+            />
+            {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
+          </div>
         </Grid>
       </Grid>
     </div>
   );
 };
-
 
 export default Transaction;
