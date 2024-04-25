@@ -20,7 +20,7 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: ['green', '#902b68'],
       color: 'white',
-      fontSize: 18,
+      fontSize: 15,
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 15,

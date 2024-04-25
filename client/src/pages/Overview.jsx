@@ -25,58 +25,56 @@ const Overview = () => {
   const userInfo = data.me;
 
   return (
-    <>
-      <div style={{marginTop: "5rem", display: "flex" ,alignSelf: "center"}}>
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          alignItems="center"
-          sx={{
-            mt: 2,
-            fontFamily: "andika, sans-serif",
-            width: "90%",
-            margin: "auto",
-            borderRadius: "1rem",
-          }}
-        >
-          <Grid item xs={12} md={6} sx={{ p: "1rem" }}>
-            <Hello userInfo={userInfo} />
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item xs={6} md={6}>
-                <Button
-                  variant="outlined"
-                  color="success"
-                  fullWidth
-                  sx={{ fontWeight: "bold", mt: 2 }}
-                  startIcon={<KeyboardDoubleArrowUpIcon />}
-                  onClick={() => window.location.assign("/income")}
-                >
-                  Add Income
-                </Button>
-              </Grid>
-              <Grid item xs={6} md={6}>
-                <Button
-                  variant="outlined"
-                  color="success"
-                  fullWidth
-                  sx={{ fontWeight: "bold", mt: 2 }}
-                  startIcon={<KeyboardDoubleArrowDownIcon />}
-                  onClick={() => window.location.assign("/expense")}
-                >
-                  Add Expense
-                </Button>
-              </Grid>
+    <div style={{ marginTop: "5rem" }}>
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          mt: 2,
+          fontFamily: "andika, sans-serif",
+          width: "90%",
+          margin: "auto",
+          borderRadius: "1rem",
+        }}
+      >
+        <Grid item xs={12} md={6} sx={{ p: "1rem" }}>
+          <Hello userInfo={userInfo} />
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={6} md={6}>
+              <Button
+                variant="outlined"
+                color="success"
+                fullWidth
+                sx={{ fontWeight: "bold", mt: 2 }}
+                startIcon={<KeyboardDoubleArrowUpIcon />}
+                onClick={() => window.location.assign("/income")}
+              >
+                Add Income
+              </Button>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Button
+                variant="outlined"
+                color="success"
+                fullWidth
+                sx={{ fontWeight: "bold", mt: 2 }}
+                startIcon={<KeyboardDoubleArrowDownIcon />}
+                onClick={() => window.location.assign("/expense")}
+              >
+                Add Expense
+              </Button>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6} style={{padding:"1rem"}}>
-            <Paper sx={{ p: "1rem", bgcolor: "white" }} elevation={24}>
-              <MakeExtraBar sx={{ width: "100%" }} />
-            </Paper>
-          </Grid>
         </Grid>
-      </div>
-    </>
+        <Grid item xs={12} md={6} style={{ padding: "1rem" }}>
+          <Paper sx={{ p: "1rem", bgcolor: "white" }} elevation={24}>
+            <MakeExtraBar sx={{ width: "100%" }} />
+          </Paper>
+        </Grid>
+      </Grid>
+    </div>
   );
 };
 
