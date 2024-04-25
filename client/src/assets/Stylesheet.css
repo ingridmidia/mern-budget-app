@@ -60,4 +60,10 @@ body {
     font-family: "Andika";
     font-size: small;
   }
+  
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
