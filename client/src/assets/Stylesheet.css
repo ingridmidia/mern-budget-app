@@ -1,57 +1,57 @@
 @font-face {
-    font-family: 'Andika'; 
-    src: url('./Fonts/Andika-R.ttf') format('truetype'); 
-  }
-.andika{
-    font-family:'Andika, sans-serif';
+  font-family: "Andika";
+  src: url("./Fonts/Andika-R.ttf") format("truetype");
 }
+
+.andika {
+  font-family: "Andika, sans-serif";
+}
+
 body {
-  font-family: 'Andika', sans-serif;
+  font-family: "Andika", sans-serif;
 }
-  @font-face {
-    font-family: 'Lobster'; 
-    src: url('./Fonts/LobsterTwo-Bold.ttf') format('truetype'); 
-  }
 
-  .lobster{
-    font-family: 'Lobster, Andika, sans-serif';
-  }
+@font-face {
+  font-family: "Lobster";
+  src: url("./Fonts/LobsterTwo-Bold.ttf") format("truetype");
+}
+
+.lobster {
+  font-family: "Lobster, Andika, sans-serif";
+}
+
 #root {
-    background-color: #fbfff4;
-    font-family: 'Andika';
-    min-height: 100vh;
-    padding-left: 10px; /* Adjust padding as needed */
-    padding-right: 10px; /* Adjust padding as needed */
+  background-color: #fafbf9;
+  font-family: "Andika";
+  min-height: 100vh;
 }
-
 
 #error-page {
-    background-image: url(../assets/Images/404-page-Basil.png);
-    min-height: 100vh;
+  background-image: url(../assets/Images/404-page-Basil.png);
+  min-height: 100vh;
 }
 
 .errorBox {
-    display: block;
-    padding: 7rem;
-
+  display: block;
+  padding: 7rem;
 }
-.errorBox > h1{
-    font-family: 'Lobster2';
-    font-size: 6rem;
-    color: #3c5318 ;
+.errorBox > h1 {
+  font-family: "Lobster2";
+  font-size: 6rem;
+  color: #3c5318;
 }
-.errorBox > i{
-   padding-left: 10rem;
-   padding: bottom 10px;
-    font-size: 3rem;
-    color:#902b68  ;
+.errorBox > i {
+  padding-left: 10rem;
+  padding: bottom 10px;
+  font-size: 3rem;
+  color: #902b68;
 }
-.errorBox > strong{
-    display: flex;
-    font-size: 3rem;
-    color: #3c5318 ;
-    padding-top: 25px;
-    padding-left:10rem ;
+.errorBox > strong {
+  display: flex;
+  font-size: 3rem;
+  color: #3c5318;
+  padding-top: 25px;
+  padding-left: 10rem;
 }
 
 /* Media query for screens smaller than 600px */

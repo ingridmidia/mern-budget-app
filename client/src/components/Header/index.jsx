@@ -2,11 +2,10 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Animated } from "react-animated-css";
-import "@fontsource/lobster-two";
 
 const Header = () => {
-  const backgroundColor = "#578d13";
-  const titleColor = "#3a302a";
+  const backgroundColor = "#BBEDC4";
+  const titleColor = "#365242";
   return (
     <Box
       style={{
@@ -15,15 +14,16 @@ const Header = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        width: "100%",
       }}
     >
       <Animated animationIn="fadeInRightBig">
         <Typography
           variant="h1"
-          fontFamily="Lobster Two, cursive"
-          style={{ color: titleColor }}
+          style={{ color: titleColor, fontFamily: "Comfortaa, sans-serif", fontWeight: 700 }}
+          className="basil-title"
         >
-          Basil
+          basil
         </Typography>
       </Animated>
     </Box>
