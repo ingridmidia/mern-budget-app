@@ -33,107 +33,105 @@ const Header = () => {
       }}
       className="header-container"
     >
-    
-        <Typography
-          variant="h1"
-          style={{ fontFamily: "Comfortaa, sans-serif", fontWeight: 600 }}
-        >
-          basil
-        </Typography>
-
+      <Typography
+        variant="h1"
+        style={{ fontFamily: "Comfortaa, sans-serif", fontWeight: 600 }}
+      >
+        basil
+      </Typography>
 
       <div style={{ display: "flex", alignItems: "center" }}>
-       
-          <Link to="/">
+        <Link to="/">
+          {Auth.loggedIn() ? null : (
             <Tooltip title="Home" placement="bottom" arrow>
-              <EnergySavingsLeafIcon
+              <HomeRoundedIcon
                 sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
               />
             </Tooltip>
-          </Link>
-
-          {Auth.loggedIn() ? (
-            <>
-              <Link to="/overview">
-                <Tooltip title="Dashboard" placement="bottom" arrow>
-                  {" "}
-                  <HomeRoundedIcon
-                    sx={{
-                      color: titleColor,
-                      fontSize: 30,
-                      marginRight: "10px",
-                    }}
-                  />
-                </Tooltip>
-              </Link>
-
-              <Link to="/transaction">
-                <Tooltip title="Transaction List" placement="bottom" arrow>
-                  <AssignmentRoundedIcon
-                    sx={{
-                      color: titleColor,
-                      fontSize: 30,
-                      marginRight: "10px",
-                    }}
-                  />
-                </Tooltip>
-              </Link>
-
-              <Link to="/graphpage">
-                <Tooltip title="Spending Graphs" placement="bottom" arrow>
-                  <AutoGraphRoundedIcon
-                    sx={{
-                      color: titleColor,
-                      fontSize: 30,
-                      marginRight: "10px",
-                    }}
-                  />
-                </Tooltip>
-              </Link>
-
-              <Link to="/home" onClick={logout}>
-                <Tooltip title="Log Out" placement="bottom" arrow>
-                  <LoginRoundedIcon sx={{ color: titleColor, fontSize: 30 }} />
-                </Tooltip>
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link to="/login">
-                <Tooltip title="Log In" placement="bottom" arrow>
-                  {" "}
-                  <LoginRoundedIcon
-                    sx={{
-                      color: titleColor,
-                      fontSize: 30,
-                      marginRight: "10px",
-                    }}
-                  />
-                </Tooltip>
-              </Link>
-
-              <Link to="/signup">
-                <Tooltip title="Sign Up" placement="bottom" arrow>
-                  {" "}
-                  <AddBoxRoundedIcon
-                    sx={{
-                      color: titleColor,
-                      fontSize: 30,
-                      marginRight: "10px",
-                    }}
-                  />
-                </Tooltip>
-              </Link>
-
-              <Link to="/about">
-                <Tooltip title="About Us" placement="bottom" arrow>
-                  {" "}
-                  <WavingHandIcon sx={{ color: titleColor, fontSize: 30 }} />
-                </Tooltip>
-              </Link>
-            </>
           )}
-   
+        </Link>
+
+        {Auth.loggedIn() ? (
+          <>
+            <Link to="/overview">
+              <Tooltip title="Dashboard" placement="bottom" arrow>
+                {" "}
+                <HomeRoundedIcon
+                  sx={{
+                    color: titleColor,
+                    fontSize: 30,
+                    marginRight: "10px",
+                  }}
+                />
+              </Tooltip>
+            </Link>
+
+            <Link to="/transaction">
+              <Tooltip title="Transaction List" placement="bottom" arrow>
+                <AssignmentRoundedIcon
+                  sx={{
+                    color: titleColor,
+                    fontSize: 30,
+                    marginRight: "10px",
+                  }}
+                />
+              </Tooltip>
+            </Link>
+
+            <Link to="/graphpage">
+              <Tooltip title="Spending Graphs" placement="bottom" arrow>
+                <AutoGraphRoundedIcon
+                  sx={{
+                    color: titleColor,
+                    fontSize: 30,
+                    marginRight: "10px",
+                  }}
+                />
+              </Tooltip>
+            </Link>
+
+            <Link to="/home" onClick={logout}>
+              <Tooltip title="Log Out" placement="bottom" arrow>
+                <LoginRoundedIcon sx={{ color: titleColor, fontSize: 30 }} />
+              </Tooltip>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <Tooltip title="Log In" placement="bottom" arrow>
+                {" "}
+                <LoginRoundedIcon
+                  sx={{
+                    color: titleColor,
+                    fontSize: 30,
+                    marginRight: "10px",
+                  }}
+                />
+              </Tooltip>
+            </Link>
+
+            <Link to="/signup">
+              <Tooltip title="Sign Up" placement="bottom" arrow>
+                {" "}
+                <AddBoxRoundedIcon
+                  sx={{
+                    color: titleColor,
+                    fontSize: 30,
+                    marginRight: "10px",
+                  }}
+                />
+              </Tooltip>
+            </Link>
+
+            <Link to="/about">
+              <Tooltip title="About Us" placement="bottom" arrow>
+                {" "}
+                <WavingHandIcon sx={{ color: titleColor, fontSize: 30 }} />
+              </Tooltip>
+            </Link>
+          </>
+        )}
       </div>
     </Box>
   );

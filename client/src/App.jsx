@@ -6,7 +6,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
-import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -40,10 +39,7 @@ function App() {
       <ApolloProvider client={client}>
         <div className="min-vh-100" >
           <Header />
-          {/* <Nav id="nav-bar" />
-          <div className='row' style={{ justifyContent: 'center', minHeight: '100vh' }}> */}
             <Outlet />
-          {/* </div> */}
           <Footer />
         </div>
       </ ApolloProvider>
