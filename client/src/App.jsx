@@ -40,7 +40,7 @@ function App() {
         <div className="min-vh-100" >
           <Header />
             <Outlet />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </ ApolloProvider>
     </>
