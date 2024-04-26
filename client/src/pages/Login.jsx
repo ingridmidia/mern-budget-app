@@ -1,15 +1,22 @@
-import React from 'react';
-import { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
-import { LOGIN } from '../utils/mutations';
-import Auth from '../utils/auth';
+import React from "react";
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { Link } from "react-router-dom";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 // Import Material-UI components
-import { Container, TextField, Button, Typography, Paper, Link as MuiLink } from '@mui/material';
+import {
+  Container,
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  Link as MuiLink,
+} from "@mui/material";
 
 function Login(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {
@@ -21,7 +28,7 @@ function Login(props) {
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (e) {
-      console.log('error', e);
+      console.log("error", e);
     }
   };
 
@@ -46,12 +53,20 @@ function Login(props) {
           padding: "20px",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
         }}
       >
-        <Typography component="h1" variant="h5" gutterBottom>
-          Log In
-        </Typography>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography component="h1" variant="h5" gutterBottom>
+            Log In
+          </Typography>
+        </div>
+
         <form
           onSubmit={handleFormSubmit}
           style={{ width: "100%", marginTop: "16px" }}
@@ -98,9 +113,22 @@ function Login(props) {
             color="success"
             style={{ marginTop: "16px" }}
           >
-            Submit
+            Login
           </Button>
         </form>
+        <div style={{ paddingTop: "1rem" }}>
+          <p>Don't Have a Basil Account?</p>
+          <Link
+            to="/signup"
+            style={{
+              textDecoration: "none",
+              color: "green",
+              fontWeight: "bold",
+            }}
+          >
+            <p>Sign up &gt; </p>
+          </Link>
+        </div>
       </Paper>
     </Container>
   );

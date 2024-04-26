@@ -114,7 +114,7 @@ function Signup(props) {
             color="success"
             style={{ marginTop: "16px" }}
           >
-            Submit
+            Create Account
           </Button>
         </form>
       </Paper>

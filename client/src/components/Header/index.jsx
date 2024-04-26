@@ -1,13 +1,11 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
-import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
+import LogoutIcon from "@mui/icons-material/Logout";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import AutoGraphRoundedIcon from "@mui/icons-material/AutoGraphRounded";
-import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { Tooltip } from "@mui/material";
 import Auth from "../../utils/auth";
 
@@ -36,20 +34,12 @@ const Header = () => {
         variant="h1"
         style={{ fontFamily: "Comfortaa, sans-serif", fontWeight: 600 }}
       >
-        basil
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          basil
+        </Link>
       </Typography>
 
       <div style={{ display: "flex", alignItems: "center" }}>
-        <Link to="/">
-          {Auth.loggedIn() ? null : (
-            <Tooltip title="Home" placement="bottom" arrow>
-              <HomeRoundedIcon
-                sx={{ color: titleColor, fontSize: 30, marginRight: "10px" }}
-              />
-            </Tooltip>
-          )}
-        </Link>
-
         {Auth.loggedIn() ? (
           <>
             <Link to="/overview">
@@ -91,44 +81,17 @@ const Header = () => {
 
             <Link to="/home" onClick={logout}>
               <Tooltip title="Log Out" placement="bottom" arrow>
-                <LoginRoundedIcon sx={{ color: titleColor, fontSize: 30 }} />
+                <LogoutIcon sx={{ color: titleColor, fontSize: 30 }} />
               </Tooltip>
             </Link>
           </>
         ) : (
           <>
-            <Link to="/login">
-              <Tooltip title="Log In" placement="bottom" arrow>
-                {" "}
-                <LoginRoundedIcon
-                  sx={{
-                    color: titleColor,
-                    fontSize: 30,
-                    marginRight: "10px",
-                  }}
-                />
-              </Tooltip>
-            </Link>
-
-            <Link to="/signup">
-              <Tooltip title="Sign Up" placement="bottom" arrow>
-                {" "}
-                <AddBoxRoundedIcon
-                  sx={{
-                    color: titleColor,
-                    fontSize: 30,
-                    marginRight: "10px",
-                  }}
-                />
-              </Tooltip>
-            </Link>
-
-            <Link to="/about">
-              <Tooltip title="About Us" placement="bottom" arrow>
-                {" "}
-                <WavingHandIcon sx={{ color: titleColor, fontSize: 30 }} />
-              </Tooltip>
-            </Link>
+            <a href="/login">
+              <Button variant="contained" color="success">
+                Login
+              </Button>
+            </a>
           </>
         )}
       </div>
