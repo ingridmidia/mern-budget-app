@@ -21,9 +21,25 @@ body {
 }
 
 #root {
-  background-color: #fee9ee;
+  background-color: #902b684b;
   font-family: "Andika";
   min-height: 100vh;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#main {
+  padding-bottom: 8rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
 }
 
 #error-page {

@@ -24,7 +24,6 @@ function Copyright() {
 
 const defaultTheme = createTheme();
 
-
 const footer = function StickyFooter() {
   return (
 
@@ -73,3 +72,4 @@ const footer = function StickyFooter() {
 };
 
 export default footer;
+

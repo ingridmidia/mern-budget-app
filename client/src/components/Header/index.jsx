@@ -6,7 +6,6 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
-import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 import AutoGraphRoundedIcon from "@mui/icons-material/AutoGraphRounded";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { Tooltip } from "@mui/material";

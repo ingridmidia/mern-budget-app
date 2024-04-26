@@ -37,12 +37,16 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
-        <div>
+        <div id="page-container">
           <Header />
+          <main className="container" id="main">
             <Outlet />
-          {/* <Footer /> */}
+          </main>
+          <footer id="footer">
+            <Footer />
+          </footer>
         </div>
-      </ ApolloProvider>
+      </ApolloProvider>
     </>
   );
 }

@@ -52,7 +52,6 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
             <StyledTableCell sx={{ width: "25%" }}>Date</StyledTableCell>
             <StyledTableCell sx={{ width: "35%" }}>Description</StyledTableCell>
             <StyledTableCell sx={{ width: "20%" }}>Amount</StyledTableCell>
-            {/* <StyledTableCell sx={{ width: "20%" }}>Category</StyledTableCell> */}
             <StyledTableCell sx={{ width: "20%" }}>Actions</StyledTableCell>
           </TableRow>
         </TableHead>
