@@ -94,7 +94,7 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
                 fullWidth
                 sx={{ fontWeight: "bold", mt: 2 }}
                 startIcon={<KeyboardDoubleArrowUpIcon />}
-                onClick={() => window.location.assign("/expense")}
+                onClick={() => window.location.assign("/income")}
               >
                 Add Income
               </Button>

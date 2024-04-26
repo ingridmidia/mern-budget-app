@@ -5,24 +5,13 @@ import { QUERY_ME } from "../utils/queries";
 import { DELETE_INCOME, DELETE_EXPENSE } from "../utils/mutations";
 import IncomeTable from "../components/incomeTable";
 import ExpenseTable from "../components/expenseTable";
-import { Grid, Typography, Paper } from "@mui/material";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { Grid } from "@mui/material";
 
 const Transaction = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
     return <p>You need to be logged in to see this page.</p>;
   }
-
-  const addExpense = (event) => {
-    event.preventDefault();
-    window.location.assign("/expense");
-  };
-
-  const addIncome = (event) => {
-    event.preventDefault();
-    window.location.assign("/income");
-  };
 
   const updateExpense = (event, expenseId) => {
     event.preventDefault();
@@ -75,7 +64,7 @@ const Transaction = () => {
   const userInfo = data.me;
 
   return (
-    <div style={{ marginTop: "5rem" }}>
+    <div style={{ marginTop: "3rem", paddingBottom: "3rem"}}>
       <Grid
         container
         spacing={2}
@@ -83,7 +72,7 @@ const Transaction = () => {
         alignItems="flex-start"
       >
         {/* First table - Income */}
-        <Grid item xs={12} md={8} xl={6}>
+        <Grid item xs={12} md={6} xl={6}>
           <div
             style={{
               display: "flex",
@@ -102,7 +91,7 @@ const Transaction = () => {
         </Grid>
 
         {/* Second table - Expenses */}
-        <Grid item xs={12} md={8} xl={6}>
+        <Grid item xs={12} md={6} xl={6}>
           <div
             style={{
               display: "flex",

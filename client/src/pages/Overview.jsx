@@ -25,7 +25,7 @@ const Overview = () => {
   const userInfo = data.me;
 
   return (
-    <div style={{ marginTop: "5rem" }}>
+    <div style={{ marginTop: "3rem" }}>
       <Grid
         container
         spacing={4}
