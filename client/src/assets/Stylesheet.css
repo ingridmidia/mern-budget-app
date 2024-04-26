@@ -51,17 +51,20 @@ body {
   display: block;
   padding: 7rem;
 }
+
 .errorBox > h1 {
   font-family: "Lobster2";
   font-size: 6rem;
   color: #3c5318;
 }
+
 .errorBox > i {
   padding-left: 10rem;
   padding: bottom 10px;
   font-size: 3rem;
   color: #902b68;
 }
+
 .errorBox > strong {
   display: flex;
   font-size: 3rem;
@@ -70,16 +73,26 @@ body {
   padding-left: 10rem;
 }
 
+#bg {
+  display: flex;
+  background-image: url("../assets/Images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 300px;
+  margin-left: calc(50% - 50vw);
+}
+
 /* Media query for screens smaller than 600px */
 @media (max-width: 599px) {
   .root {
     font-family: "Andika";
     font-size: small;
   }
-  
+
   .header-container {
     flex-direction: column;
     align-items: center;
   }
 }
-
