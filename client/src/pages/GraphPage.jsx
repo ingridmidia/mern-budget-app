@@ -1,6 +1,6 @@
-import React from 'react';
-import { Grid, Box } from '@mui/material';
-import GraphDropdown from '../components/graphs/graphDropdown';
+import React from "react";
+import { Grid, Box, Paper } from "@mui/material";
+import GraphDropdown from "../components/graphs/graphDropdown";
 import Auth from "../utils/auth";
 
 const Graph = () => {
@@ -8,7 +8,7 @@ const Graph = () => {
   if (!Auth.loggedIn()) {
     return <p>You need to be logged in to see this page.</p>;
   }
-  
+
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
@@ -17,25 +17,30 @@ const Graph = () => {
     marginTop: "20px",
     background: "white",
   };
+
   return (
-    <>
-      <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item xs={9} sm={8}>
-            <div id="graphs" style={containerStyle}>
-              <GraphDropdown />
-            </div>
-          </Grid>
+    <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item xs={11} sm={8} md={6} lg={5}>
+          <Paper
+            sx={{
+              padding: "20px",
+              borderRadius: "8px",
+              marginTop: "20px",
+              background: "white",
+            }}
+          >
+            <GraphDropdown />
+          </Paper>
         </Grid>
-      </Box>
-    </>
+      </Grid>
+    </Box>
   );
 };
 
 export default Graph;
-
