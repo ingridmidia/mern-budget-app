@@ -1,9 +1,20 @@
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_EXPENSE } from "../utils/mutations";
-import React from 'react';
-import { TextField, Button, Container, Box, Grid, Select, MenuItem, InputLabel, FormControl} from '@mui/material';
-import OutputIcon from '@mui/icons-material/Output';
+import React from "react";
+import {
+  TextField,
+  Button,
+  Container,
+  Box,
+  Grid,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Paper,
+} from "@mui/material";
+import OutputIcon from "@mui/icons-material/Output";
 
 const Expense = () => {
   const [addExpense, { error }] = useMutation(ADD_EXPENSE);
@@ -33,16 +44,9 @@ const Expense = () => {
     <Container
       maxWidth="sm"
       justifyContent="center"
-      style={{ backgroundColor: "white", marginTop: "20px" }}
+      style={{ marginTop: "3rem" }}
     >
-      <Box
-        mt={3}
-        style={{
-          backgroundColor: "white",
-          padding: "20px",
-          borderRadius: "8px",
-        }}
-      >
+      <Paper elevation={3} sx={{ padding: "20px", borderRadius: "8px" }}>
         <form onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -126,9 +130,9 @@ const Expense = () => {
             {error.message}
           </Box>
         )}
-      </Box>
+      </Paper>
     </Container>
-  );  
+  );
 };
 
 export default Expense;

@@ -1,11 +1,12 @@
+import React from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { UPDATE_INCOME } from "../utils/mutations";
 import { QUERY_INCOME } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import { TextField, Button, Container, Box, Grid } from "@mui/material";
+import { TextField, Button, Container, Box, Grid, Paper } from "@mui/material";
 import formatDateForDefaultValue from "../utils/dateFormate";
-import InputIcon from '@mui/icons-material/Input';
+import InputIcon from "@mui/icons-material/Input";
 
 const UpdateIncome = () => {
   if (!Auth.loggedIn()) {
@@ -45,11 +46,8 @@ const UpdateIncome = () => {
   const date = formatDateForDefaultValue(incomeInfo.createdAt);
 
   return (
-    <>
-      <Container
-        maxWidth="sm"
-        style={{ backgroundColor: "white", marginTop: "30px" }}
-      >
+    <Container maxWidth="sm" style={{ marginTop: "30px" }}>
+      <Paper elevation={3} sx={{ padding: "20px", borderRadius: "8px" }}>
         <Box mt={3}>
           <form onSubmit={handleFormSubmit}>
             <Grid container spacing={2}>
@@ -112,8 +110,8 @@ const UpdateIncome = () => {
             </Box>
           )}
         </Box>
-      </Container>
-    </>
+      </Paper>
+    </Container>
   );
 };
 

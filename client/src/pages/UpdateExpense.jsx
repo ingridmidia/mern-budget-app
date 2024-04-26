@@ -1,3 +1,4 @@
+import React from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { UPDATE_EXPENSE } from "../utils/mutations";
@@ -13,9 +14,10 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
+  Paper,
 } from "@mui/material";
 import formatDateForDefaultValue from "../utils/dateFormate";
-import InputIcon from '@mui/icons-material/Input';
+import InputIcon from "@mui/icons-material/Input";
 
 const UpdateExpense = () => {
   if (!Auth.loggedIn()) {
@@ -24,7 +26,9 @@ const UpdateExpense = () => {
 
   const { expenseId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_EXPENSE, { variables: { expenseId } });
+  const { loading, data } = useQuery(QUERY_EXPENSE, {
+    variables: { expenseId },
+  });
 
   const [updateExpense, { error }] = useMutation(UPDATE_EXPENSE);
 
@@ -55,11 +59,8 @@ const UpdateExpense = () => {
   const date = formatDateForDefaultValue(expenseInfo.createdAt);
 
   return (
-    <>
-      <Container
-        maxWidth="sm"
-        style={{ backgroundColor: "white", marginTop: "30px" }}
-      >
+    <Container maxWidth="sm" style={{ marginTop: "30px" }}>
+      <Paper elevation={3} sx={{ padding: "20px", borderRadius: "8px" }}>
         <Box mt={3}>
           <form onSubmit={handleFormSubmit}>
             <Grid container spacing={2}>
@@ -151,8 +152,8 @@ const UpdateExpense = () => {
             </Box>
           )}
         </Box>
-      </Container>
-    </>
+      </Paper>
+    </Container>
   );
 };
 
