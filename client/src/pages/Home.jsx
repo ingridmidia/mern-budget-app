@@ -6,10 +6,10 @@ const Home = () => {
   return (
     <>
       <div id="bg">
-        <Paper elevation={3} style={{ padding: 6, margin: "2rem", }}>
+        <Paper elevation={3} style={{ padding: 6, margin: "2rem" }}>
           <Box
             sx={{
-              padding: 2,
+              padding: 1,
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -51,7 +51,7 @@ const Home = () => {
         </Paper>
       </div>
 
-      <Box sx={{ padding: 4 }}>
+      <Box>
         <Box
           sx={{
             display: "flex",
