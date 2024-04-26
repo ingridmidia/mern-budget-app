@@ -49,11 +49,11 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
       <Table sx={{ minWidth: 300 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <StyledTableCell sx={{ width: "20%" }}>Date</StyledTableCell>
-            <StyledTableCell sx={{ width: "20%" }}>Description</StyledTableCell>
+            <StyledTableCell sx={{ width: "25%" }}>Date</StyledTableCell>
+            <StyledTableCell sx={{ width: "35%" }}>Description</StyledTableCell>
             <StyledTableCell sx={{ width: "20%" }}>Amount</StyledTableCell>
-            <StyledTableCell sx={{ width: "20%" }}>Category</StyledTableCell>
-            <StyledTableCell sx={{ width: "15%" }}>Actions</StyledTableCell>
+            {/* <StyledTableCell sx={{ width: "20%" }}>Category</StyledTableCell> */}
+            <StyledTableCell sx={{ width: "20%" }}>Actions</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -65,9 +65,13 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
               <TableCell component="th" scope="row">
                 {expense.createdAt}
               </TableCell>
-              <TableCell>{`${expense.description}`}</TableCell>
+              <TableCell>
+                {`${expense.description}`} <br />
+                <div
+                  style={{ fontSize: 12, fontStyle: "italic" }}
+                >{`${expense.category}`}</div>
+              </TableCell>
               <TableCell>{currencyFormater(expense.amount)}</TableCell>
-              <TableCell>{`${expense.category}`}</TableCell>
               <TableCell>
                 <EditIcon
                   sx={{ marginRight: { md: "5px" } }}

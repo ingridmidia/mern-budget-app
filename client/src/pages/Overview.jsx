@@ -68,9 +68,9 @@ const Overview = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={6} style={{ padding: "1rem" }}>
+        <Grid item xs={12} md={6} sx={{ p: "1rem" }}>
           <Paper sx={{ p: "1rem", bgcolor: "white" }} elevation={24}>
-            <MakeExtraBar sx={{ width: "100%" }} />
+          <MakeExtraBar sx={{ width: "100%" }} />
           </Paper>
         </Grid>
       </Grid>
