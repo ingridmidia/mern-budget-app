@@ -17,7 +17,7 @@ const Home = () => {
             }}
           >
             <Typography
-              variant="h4"
+              variant="h5"
               style={{
                 fontFamily: "Andika, sans-serif",
                 textAlign: "center",
@@ -45,7 +45,7 @@ const Home = () => {
                   variant="contained"
                   color="success"
                   size="small"
-                  style={{ paddingBottom: "0.5rem" }}
+                  style={{ marginBottom: "0.8rem" }}
                 >
                   HERE
                 </Button>{" "}

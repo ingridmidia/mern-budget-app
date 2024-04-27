@@ -20,10 +20,10 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: ["green", "#902b68"],
       color: "white",
-      fontSize: 15,
+      fontSize: 14,
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 15,
+      fontSize: 14,
     },
   }));
 
@@ -39,7 +39,7 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
       sx={{
         width: "100%",
         maxWidth: { xs: "100%", md: 700 },
-        padding: { xs: "0.5rem 0.5rem 0 0.5rem", md: "1rem 1rem 0 1rem" },
+        padding: { xs: "0.5rem 0 0 0", md: "1rem 1rem 0 1rem" },
         margin: "auto",
       }}
     >

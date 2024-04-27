@@ -40,7 +40,7 @@ const Overview = () => {
         }}
       >
         <Grid item xs={12} md={6} sx={{ p: "1rem" }}>
-          <Paper sx={{ p: "2rem", bgcolor: "white" }} elevation={24}>
+          <Paper sx={{ p: "1rem", bgcolor: "white" }} elevation={24}>
             <Hello userInfo={userInfo} />
             <Grid container spacing={2} justifyContent="center">
               <Grid item xs={6} md={6}>
