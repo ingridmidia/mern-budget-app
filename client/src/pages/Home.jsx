@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Grid, Paper, Typography, Button } from "@mui/material";
-import image from "../assets/Images/basil.png";
 
 const Home = () => {
   return (
     <>
       <div id="bg">
-        <Paper elevation={3} style={{ padding: 6, margin: "2rem" }}>
+        <Paper elevation={3} style={{ padding: 40, margin: "2rem" }}>
           <Box
             sx={{
               padding: 1,
@@ -18,7 +17,7 @@ const Home = () => {
             }}
           >
             <Typography
-              variant="h3"
+              variant="h4"
               style={{
                 fontFamily: "Andika, sans-serif",
                 textAlign: "center",
@@ -42,7 +41,12 @@ const Home = () => {
               <br />
               Learn more about us{" "}
               <a href="/about">
-                <Button variant="contained" color="success">
+                <Button
+                  variant="contained"
+                  color="success"
+                  size="small"
+                  style={{ paddingBottom: "0.5rem" }}
+                >
                   HERE
                 </Button>{" "}
               </a>
@@ -51,18 +55,25 @@ const Home = () => {
         </Paper>
       </div>
 
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            p: 6,
+            p: 2,
           }}
         >
-          <Typography variant="h3" style={{ fontFamily: "Andika, sans-serif" }}>
-            What our customers say about Basil
+          <Typography variant="h5" style={{ fontFamily: "Andika, sans-serif" }}>
+            What do our users say?
           </Typography>
         </Box>
 

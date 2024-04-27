@@ -96,4 +96,8 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  #image {
+  display: none;
+}
 }
